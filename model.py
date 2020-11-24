@@ -247,7 +247,7 @@ print('WACC of ' + company + ' is ' + str((wacc_company*100))+'%')
 FCF_List = CF_forec.iloc[-1].values.tolist()
 npv = np.npv(wacc_company,FCF_List)
 
-LTGrowth = 0.02
+LTGrowth = 0.03
 
 Terminal_value = (CF_forecast['next_5_year']['FCF'] * (1+ LTGrowth)) /(wacc_company  - LTGrowth)
 
@@ -259,7 +259,7 @@ target_value = target_equity_value - debt
 numbre_of_shares = requests.get(f'https://financialmodelingprep.com/api/v3/enterprise-values/{company}?apikey={demo}').json()
 numbre_of_shares = numbre_of_shares[0]['numberOfShares']
 
-target_price_per_share = target_value/numbre_of_shares
+target_price_per_share = target_value / numbre_of_shares
 
 print('')
 print(company + ' Forecasted price per stock is ' + str(target_price_per_share) )
@@ -269,7 +269,7 @@ print('___________________________________________________________')
 print('')
 print('The forecast is based on the following assumptions: ')
 print('1. Revenue growth: ' + str(revenue_g))
-print('2. Cost of Capital: ' + str(wacc_company))
+print('2. Cost of Capital [ WACC ]: ' + str(wacc_company))
 print('3. Perpetuity Growth: ' + str(LTGrowth))
 print('___________________________________________________________')
 print()
