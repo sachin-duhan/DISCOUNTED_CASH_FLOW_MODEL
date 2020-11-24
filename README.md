@@ -8,7 +8,7 @@ Discounted cash flow (DCF) is a valuation method used to estimate the value of a
 
 ### RUNNING CODE
 ```
-git clone git://github.com/sachin-duhan26/discounted-cash-flow-model
+git clone https://github.com/<your user name>/DISCOUNTED_CASH_FLOW_MODEL
 ```
 
 ```
@@ -20,4 +20,5 @@ python3 model.py --ticker=AAPL
 ```
 
 ## KEEP LEARNING
-- Sachin duhan
+- Sachin Duhan
+- Prateek Sethi

@@ -15,7 +15,7 @@ count = 0
 revenue_g = []
 for item in IS:
   if count < 4:
-    #print(item)
+    
     revenue_g.append(item['revenue'])
     count = count + 1
 
@@ -117,7 +117,7 @@ CF_forecast['next_5_year']['CF_operations'] = CF_forecast['next_5_year']['netInc
 CF_forecast['next_5_year']['CAPEX'] = balance_sheet['next_5_year']['propertyPlantEquipmentNet'] - balance_sheet['next_4_year']['propertyPlantEquipmentNet'] + income_statement['next_5_year']['depreciationAndAmortization']
 CF_forecast['next_5_year']['FCF'] = CF_forecast['next_5_year']['CAPEX'] + CF_forecast['next_5_year']['CF_operations']
 
-#add the forecasted cash flows into a Pandas
+#add the forecasted cash flows into a Pandas object
 CF_forec = pd.DataFrame.from_dict(CF_forecast,orient='columns')
 
 #add below option to format the dataframe with thousand separators
@@ -136,7 +136,7 @@ def interest_coveraga_and_RF(company):
   start = datetime.datetime(2019, 7, 10)
         
   end= datetime.datetime.today().strftime('%Y-%m-%d')
-  #end = datetime.datetime(2020, 7, 10)
+  
 
   Treasury = web.DataReader(['TB1YR'], 'fred', start, end)
   RF = float(Treasury.iloc[-1])
